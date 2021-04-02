@@ -365,6 +365,7 @@ header a {
     margin-left: 15px;
     font-size: 1em;
     font-weight: normal;
+    margin-right: 50px;
     
 }
 
@@ -374,6 +375,8 @@ header a {
     padding: 10px 10px;
     font-size: 1.1em;
     color: rgb(74, 149, 11);
+    margin-right: 50px;
+    
 }
 
 
