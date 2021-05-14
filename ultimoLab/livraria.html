@@ -1,0 +1,104 @@
+
+<!doctype html>
+<html>
+<head>
+	<title>Livraria</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+
+		
+		
+$(function(){
+
+	$("#adicionar").click(function(){
+		var tituloLivro = $("#titulo").val();
+		var descricao = $("#descricao").val();
+		var genero = $("#genero").val();
+		var autor = $("#autor").val();
+        let obj_img = $("<img>").attr("src", "./img/lixeira.png");
+
+		$("#acervo").append(
+				$("<tr>")
+					.append($("<td>").text(tituloLivro))
+					.append($("<td>").text(descricao))
+					.append($("<td>").text(genero))
+					.append($("<td>").text(autor))
+					.append($("<td>")
+						.append($("<a>")
+                                
+								.attr("href", "#")
+								.text("Apagar"))
+					)
+                
+		)
+		$("#titulo").val("");
+		$("#descricao").val("");
+		$("#genero").val("");
+		$("#autor").val("");
+	});
+
+	$("#acervo").on("click", "a", function(){
+		$(this).parents("tr").remove();
+	})
+
+	$("#excluir").click(function(){
+		
+	})
+
+	$("#apagarAcervo").click(function(){
+		$("#acervo").empty();
+		$("#acervo")
+			.append($("<tr>")
+						.append($("<th>").text("Título"))
+						.append($("<th>").text("Descricao"))
+						.append($("<th>").text("Genero"))
+						.append($("<th>").text("Autor"))
+						.append($("<th>").text(""))
+					)
+	})
+});
+
+	</script>
+
+</head>
+<body>
+			
+				<h1>Cadastro de Livros</h1>
+				<input type="text" id="titulo" placeholder="Título"/> <br /><br />
+
+				<textarea id="descricao" placeholder="Descrição"></textarea><br /><br />
+
+				<select id="genero">
+					<option value="Romance">Romance</option>
+					<option value="Drama">Drama</option>
+					<option value="Terror">Terror</option>
+					<option value="Ficção">Ficção</option>
+					<option value="Técnico">Técnico</option>
+		
+				</select>
+				<br /><br />
+
+				<input type="text" id="autor" placeholder="Título"/>
+
+				<br><br>
+				
+				<button id="adicionar">Cadastrar</button>
+				
+			
+			
+			<table id="acervo">
+				<tr>
+					<th>Título</th>
+					<th>Descrição</th>
+					<th>Genero</th>
+					<th>Autor</th>
+					<th></th>
+				</tr>
+			</table>
+			
+		</div>
+        <footer></footer>
+    </div>
+</body>
+</html>

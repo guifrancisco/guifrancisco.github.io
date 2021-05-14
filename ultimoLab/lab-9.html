@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Lab Jquery - EX9</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            $("#calc").click(function(){
+
+                var dt1 = $('#date1').val();
+                var dt2 = $('#date2').val();
+
+                function calcula(data1, data2){
+                data1 = new Date(data1);
+                data2 = new Date(data2);
+                return (data2 - data1)/(1000*3600*24);
+             }
+  
+                $('#result').text(calcula(dt1,dt2))
+
+                console.log("OK");
+            })
+
+
+        });
+
+        
+    </script>
+  </head>
+  <body>
+    <h1>Calculo de Distância</h1>
+    <label value="Primeira data: "><input id="date1" type="date">
+    <label value="Segunda data: "><input id="date2" type="date">
+    <input id="calc" type="button" value="Calcule"><br><br>
+    <label value="Resultado">Resultado: <span id="result"></span>
+
+  </body>
+</html>

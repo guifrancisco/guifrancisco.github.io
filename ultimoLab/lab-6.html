@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Lab Jquery - EX6</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        function GetDate(nome, nome2)
+        {
+            document.getElementById("resultado").innerHTML = getAge(document.getElementById("anoInput").value);
+        }
+
+
+        function getAge(dateString) 
+        {
+            var hoje = new Date();
+            var aniversario = new Date(dateString);
+            
+            var age = hoje.getFullYear() - aniversario.getFullYear();
+            
+            var m = hoje.getMonth() - aniversario.getMonth();
+            
+            if (m < 0 || (m === 0 && hoje.getDate() < aniversario.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+
+         
+    </script>
+  </head>
+  <body>
+
+    <h1>Conversor</h1>
+
+    <input id="anoInput" type="date">
+
+    <button onclick="GetDate()">Converter</button>
+    <h2>Resultado:</h2>
+
+    <div id="resultado"></div>
+    <div id="resultado2"></div>
+
+    <div id="DisplayDate"></div>
+
+
+  </body>
+</html>

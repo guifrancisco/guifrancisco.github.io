@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Ajax - EX 04</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+
+            $("#buscaEndereco").click(function(){
+                var servico = "https://api.postmon.com.br/v1/cep/";
+                var cep =  $("#cep").val();
+
+                var $xhr = $.get(servico+cep);
+                $xhr.done(function(endereco){
+                    $(".endereco-logradouro").text(endereco.logradouro);
+                    $(".endereco-bairro").text(endereco.bairro);
+                    $(".endereco-cidade").text(endereco.cidade);
+                    $(".endereco-estado").text(endereco.estado);
+                })
+                $xhr.fall(function(data){
+                    console.log("Deu ruim");
+                    console.log(data);
+                })
+
+            })
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <h1>CEP</h1>
+    <input type="text" id="cep">
+    <button id="buscaEndereco">Buscar Endereço</button>
+    <hr>
+    <h2>Endereço</h2>
+    <div class="endereco">
+        <p class="endereco-logradouro"></p>
+        <p class="endereco-bairro"></p>
+        <p class="endereco-cidade"></p>
+        <p class="endereco-estado"></p>
+
+    </div>
+    <div class="cardapio"></div>
+</body>
+</html>

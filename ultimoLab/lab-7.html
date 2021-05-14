@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Lab Jquery - EX7</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+            $(function() {
+            $('#datepicker').datepicker({dateFormat: 'dd/mm/yy'});
+            $('#btnFormatar').click(formatar);
+            });
+
+            function formatar() {
+            var data = $('#datepicker').datepicker('getDate');
+            var extenso;
+            
+            data = new Date(data);
+
+            var day = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"][data.getDay()];
+            var date = data.getDate();
+            var month = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][data.getMonth()];
+            var year = data.getFullYear();
+
+            console.log(data);
+
+            $('#lblDataExtenso').html(`${day}, ${date} de ${month} de ${year}`);
+            }
+        
+    </script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <h1>Conversor</h1>
+
+  <p>Data:<input type="text" id="datepicker"></p>
+  <p><button id="btnFormatar">Formatar</button>
+  <h2>Resultado:</h2>
+  <p><label id="lblDataExtenso"></label></p>
+
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Lab Ajax - EX 02</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        function Produto (id, nome, preco){
+
+            this.id =  id;
+            this.nome = nome;
+            this.preco = preco;
+        }
+        $(function(){
+
+            let cappucino= new Produto(1, "Capuccino", 2);
+            let espresso = new Produto(2, "Espresso", 2);
+            let frapuccino = new Produto(3, "Frapuccino", 4);
+            let chococcino = new Produto(4, "Chococcino", 4);
+            let chocolateQ = new Produto(5, "Chocolate Quente", 5);
+            let frape = new Produto(6, "Frapê", 10);
+            let sucoL = new Produto(7, "Suco de Laranja", 5);
+            let acai = new Produto(8, "Açaí", 5);
+            let boloL = new Produto(9, "Bolo de Laranja", 10);
+
+            let cardapio =  [cappucino, espresso, frapuccino,chococcino, chocolateQ, frape, sucoL, acai, boloL];
+            let precoTotal = 0;
+
+                cardapio.forEach(function(item){
+                    console.log(item.nome);
+                    let $tr = $("<tr>");
+                    let $tdItem = $("<td>").text(item.nome);
+                    let $tdPreco = $("<td>").text(item.preco);
+                    $tr.append($tdItem);
+                    $tr.append($tdPreco);
+                    $("#menu").append($tr);
+
+
+                });
+
+                $("#menu").on("click","tr", function (){
+
+                    let val = parseFloat($(this).find("td:nth-child(2)").text());
+
+                    precoTotal += val;
+
+                    $("#preco").text(precoTotal);
+                })
+
+               
+                
+        });
+        
+         
+    </script>
+  </head>
+  <body>
+
+    <table id="menu">
+        <tr>
+            <th>Item</th>
+            <th>Preço Unitário</th>
+
+        </tr>
+    </table>
+
+    <h2>Pedidos</h2>
+    <h1>Total = </h1>
+    <p id="preco"></p>
+    
+  </body>
+</html>

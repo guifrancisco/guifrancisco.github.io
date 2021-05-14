@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Lab Jquery - EX1</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        
+
+        $(function(){
+            $("#addTable").click(function(){
+
+              var str = $('#texto').val();
+            document.write("<h2>Invertendo caracteres</h2>");
+            document.write("<h3>Texto original :  ", str, "</h3>");
+            const reverse_str = str.split('').reverse().join('');
+            document.write("<h3>Inversão: ", reverse_str, "</h3>");
+
+            })
+
+        });
+
+        
+        
+    </script>
+  </head>
+  <body>
+
+
+    <h1>Inversor</h1>
+    <input id="texto" type="text">
+    <button id="addTable">Inverter</button>
+    
+      
+  </body>
+</html>
