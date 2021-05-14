@@ -1,0 +1,33 @@
+
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script > function testaNumeroPrimo(){ 
+      
+      var numero = parseInt(document.getElementById('num').value); 
+      
+      var resposta = document.getElementById('res'); 
+      
+      var divisores=0; 
+      
+      for(var count=1 ; count<=numero ; count++) 
+      
+        if(numero % count == 0) divisores++;
+        
+        if(divisores==2) res.innerHTML='O numero é primo.'; 
+        
+        else res.innerHTML='O numero não é primo.'; 
+        
+        } 
+        
+    </script> 
+
+  </head>
+  <body>
+    Digite um numero<br /> <input id="num" type="number" /> <br /> <button onclick="testaNumeroPrimo()">Testar</button><br /> 
+    <div id="res">
+  </body>
+</html>
+

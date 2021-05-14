@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+        <script>
+            function compara() {
+                var num1 = document.getElementById("n1").value;
+                var num2 = document.getElementById("n2").value;
+                var res = document.getElementById("res");
+                num1 = parseInt(num1);
+                num2 = parseInt(num2);
+                if (num1 > num2) {
+                    res.innerHTML = "O numero " + num1 + " é maior que " + num2 + ".";
+                } else {
+                    res.innerHTML = "O numero " + num2 + " é maior que " + num1 + ".";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Digite um numero <br />
+        <input type="number" id="n1" /> <br />
+        Digite um numero <br />
+        <input type="number" id="n2" /> <br />
+        <button onclick="compara()">Comparar</button><br />
+        <div id="res"></div>
+    </body>
+</html>

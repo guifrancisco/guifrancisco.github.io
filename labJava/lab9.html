@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+        <script>
+            function calculaMedia(){ 
+                
+                var nota1 = document.getElementById("n1").value;
+                
+                var nota2 = document.getElementById("n2").value;
+                
+                var nota3 = document.getElementById("n3").value;
+                
+                var res = document.getElementById("res");
+                
+                nota1 = parseInt(nota1);
+                
+                nota2 = parseInt(nota2);
+                
+                nota3 = parseInt(nota3);
+                
+                var media = ((nota1 *2)+(nota2 *3)+(nota3 *5))/10;
+                
+                res.innerHTML= media;
+             }
+        </script>
+    </head>
+    <body>
+        Informe a primeira nota: <br />
+        <input type="number" id="n1" /> <br />
+        Informe a segunda nota: <br />
+        <input type="number" id="n2" /> <br />
+        Informe a terceira nota: <br />
+        <input type="number" id="n3" /> <br />
+        <button onclick="calculaMedia()">Calcular</button><br />
+        <div id="res"></div>
+    </body>
+</html>

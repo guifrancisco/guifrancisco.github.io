@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+        <script>
+            function calculaSalario() {
+                var numCarros = document.getElementById("n1").value;
+                var valorTotalVendas = document.getElementById("n2").value;
+                var salFixo = document.getElementById("n3").value;
+                var valorCarroVendido = document.getElementById("n4").value;
+                var res = document.getElementById("res");
+                numCarros = parseFloat(numCarros);
+                valorTotalVendas = parseFloat(valorTotalVendas);
+                salFixo = parseFloat(salFixo);
+                valorCarroVendido = parseFloat(valorCarroVendido);
+                var comissao = numCarros * valorCarroVendido;
+                var valorVendasEfetuadas = valorTotalVendas * 0.05;
+                res.innerHTML = salFixo + (valorVendasEfetuadas + comissao);
+            }
+        </script>
+    </head>
+    <body>
+        Informe o numero de carros vendidos: <br />
+        <input type="number" id="n1" /> <br />
+        Informe o valor total de suas vendas: <br />
+        <input type="number" id="n2" /> <br />
+        Informe o seu salario fixo: <br />
+        <input type="number" id="n3" /> <br />
+        Informe o valor recebido por carro vendido: <br />
+        <input type="number" id="n4" /> <br />
+        <button onclick="calculaSalario()">Calcular</button><br />
+        <div id="res"></div>
+    </body>
+</html>

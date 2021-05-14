@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+        <script>
+            function calculoMacas() {
+                var numMacas = document.getElementById("n1").value;
+                numMacas = parseInt(numMacas);
+                if (numMacas < 12) {
+                    var totalCompra = numMacas * 1.3;
+                    var arredondado = parseFloat(totalCompra.toFixed(2));
+                    res.innerHTML = "R$" + arredondado;
+                } else {
+                    var totalCompra = numMacas;
+                    res.innerHTML = "R$" + totalCompra;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Informe a quantidade de maçãs: <br />
+        <input type="number" id="n1" /> <br />
+        <button onclick="calculoMacas()">Calcular</button><br />
+        <div id="res"></div>
+    </body>
+</html>

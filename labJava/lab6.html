@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+        <script>
+            function calculaReajuste(){ var custoDeFrabrica = document.getElementById("n1").value;
+            
+            var res = document.getElementById("res"); var percentualDestribuidor = 0.28;
+            
+            var percentualImpostos = 0.45; custoDeFrabrica = parseFloat(custoDeFrabrica);
+            
+            var destribuidor = (custoDeFrabrica * percentualDestribuidor); 
+            
+            var impostos = (custoDeFrabrica * percentualImpostos);
+            
+            res.innerHTML= custoDeFrabrica+(impostos + destribuidor); 
+        }
+
+        </script>
+    </head>
+    <body>
+        Informe o custo de fabrica do carro: <br />
+        <input type="number" id="n1" /> <br />
+        <button onclick="calculaReajuste()">Calcular</button><br />
+        <div id="res"></div>
+    </body>
+</html>

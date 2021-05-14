@@ -1,0 +1,16 @@
+
+
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script > function calculaReajuste(){ var num1 = document.getElementById("n1").value; var num2 = document.getElementById("n2").value; var res = document.getElementById("res"); num1 = parseInt(num1); num2 = parseFloat(num2); res.innerHTML=num1 + (num1 * (num2/100)); } </script> 
+  </head>
+  <body>
+    Informe o salario mensal: <br/>
+     <input type="number" id="n1"> <br/> Informe o percentual de reajuste: <br/> <input type="number" id="n2"> <br/> <button onclick="calculaReajuste()">Calcular</button><br/> 
+    <div id="res"></div>
+  </body>
+</html>
+

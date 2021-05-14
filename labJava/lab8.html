@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+        <script>
+            function conversor() {
+                var f = document.getElementById("n1").value;
+                var res = document.getElementById("res");
+                f = parseInt(f);
+                var c = (f - 32) / 1.8;
+                res.innerHTML = c;
+            }
+        </script>
+    </head>
+    <body>
+        Informe a temperatura em Fahrenheit: <br />
+        <input type="number" id="n1" /> <br />
+        <button onclick="conversor()">Calcular</button><br />
+        <div id="res"></div>
+    </body>
+</html>
