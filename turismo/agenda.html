@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Fundamentos Web - Lab 04 - Responsividade</title>
+</head>
+<body>
+    <header class="container">
+        <h1>NOVA FRIBURGO COUNTRY CLUB </h1>
+        <nav>
+            <ul>
+                <li><a href="./siteT.html">INÍCIO</a></li>
+                <li><a href="./atividades.html">ATIVIDADES</a></li>
+                <li><a href="./agenda.html">AGENDA</a></li>
+                <li><a href="./noticias.html">NOTÍCIAS</a></li>
+                <li><a href="./fale.html">FALE CONOSCO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+
+        <h2 class="not">AGENDA</h2>
+        
+
+        <div class="row">
+           
+                <img src="./img/agenda-visita.jpg" class="box-img2" height="400px" width="">
+           
+            <div class="box-vista">
+                <h2>Venha nos visitar !</h2>
+                <p>Será uma satisfação receber a sua visita!</p>
+                <p>Nossas visitas guiadas são individuais, agendadas previamente, para que você e sua família possam conhecer nossa estrutura e proposta de lazer. Para isso, dedicamos um momento e uma pessoa exclusivamente para te atender de forma diferenciada e personalizada. As visitas duram, em média, 30 minutos.</p>
+                <p>Nesse momento de suspensão das atividades presenciais, em função da pandemia Covid-19, estamos trabalhando com horário reduzido de atendimento (meio período) e/ou no modo remoto. Assim, o agendamento de visitas é avaliado conforme as liberações governamentais do momento.</p>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="box-vista">
+                <section id="visita">
+					<h4>Marque sua visita aqui</h4>
+					<form>
+						<fieldset class="box-box-visita">
+							<legend>Selecione uma data</legend>
+							
+							<label for="data">Data</label>
+							<input class="campo" type="date" id="data" value="dd/mm/aaaa" style="width: 100px;">
+
+							<label for="qtd">Quantidade de pessoas</label>
+							<input class="campo" style="width: 30px;" type="text" id="qtd" value="1">
+
+						</fieldset>
+
+						<input class="botao" type="submit" value="Verificar disponibilidade">
+
+					</form>
+				</section>
+            </div>
+
+        </div>
+        <br>
+    </main>
+    <footer class="container">
+        <div class="row">
+            <p>Desenvolvido por Fundamentos da Web 2020.2</p>
+            <div class="media">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter-square"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-pinterest-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./java/app.js"></script>
+</body>
+</html>
