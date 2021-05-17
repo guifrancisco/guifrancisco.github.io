@@ -620,9 +620,55 @@ footer a {
 
    .box-box-visita input{
 
-    width: 30px;
+    width: 300px;
 
    }
+
+   .box-box-visita textarea{
+
+    width: 300px;
+
+   }
+
+   .video-c{
+    
+    padding-top: 20px;
+    margin-left: 30px;
+    width: 600px;
+    height: 300px;
+ }
+
+ .box-img2{
+
+    width: 100%;
+ }
+
+ h4 {
+    color: #86521a;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    margin-bottom: 0;
+    margin-left: 200px;
+}
+
+.media2 li{
+
+
+    display: inline;
+    margin-left: 100px;
+    font-size: 3em;
+    font-weight: normal;
+
+}
+
+.media2 i {
+
+    border: #c39b3d;
+    padding: 5px 5px;
+    font-size: 1.1em;
+    color: #c39b3d;
+}
+
 
 
     
@@ -721,7 +767,7 @@ footer a {
 
     .box-2 p{
 
-     font-size: 16px;
+     font-size: 25px;
     }
 
     .video-c{
