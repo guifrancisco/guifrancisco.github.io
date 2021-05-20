@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Lab Jquery - EX3</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+        <div>
+
+            Escreva uma frase<br>
+            <input type="text" id="texto" placeholder="Digite uma frase"><br>
+            <button id="button">Enviar</button>
+            <p id="result"></p><br>
+                
+        </div>
+                
+        <div>
+            <table id="tabela"> 
+                <tr>
+                    <th><b>PALAVRA</b></th>
+                    <th><b>OCORRÊNCIAS</b></th>
+                </tr>
+            </table>
+        </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function conta(y, palavra)
+        {
+            return y.filter((v) => (v === palavra)).length; 
+        }
+
+        $(function(){
+        
+            $("#button").click(function(){
+
+                let frase = $("#texto").val();
+
+                let array_frase = frase.split(/\s+/).map(function(palavra)
+                { 
+                    return palavra.toLocaleLowerCase().replace(/[.,]/g, '');
+                });
+                var objContagem = {};
+
+                jQuery.each(array_frase, function(key,value) {
+                    if (!objContagem.hasOwnProperty(value)) {
+                        objContagem[value] = 1;
+                    } else {
+                        objContagem[value]++;
+                    }
+                });
+
+                var array_frase_sem_repeticao = array_frase.filter(function(element, i){
+                        return array_frase.indexOf(element)===i;
+                });
+
+
+                $.each( array_frase_sem_repeticao, function( key, value ) {
+                    $("#tabela")
+                            .append(
+                                $("<tr>")
+                                    .append(
+                                        $("<td>")
+                                            .text(array_frase_sem_repeticao[key])
+                                        )
+                                    .append(
+                                        $("<td>")
+                                            .text(objContagem[value])
+                                    )
+                            );
+                });
+                
+            })
+        });
+    </script>
+	
+</body>
+</html>

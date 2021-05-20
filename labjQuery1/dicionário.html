@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dicionário</title>
+	<meta charset="utf-8">
+	<style>
+        #container{
+            display: flex;
+        }
+        .left{
+            padding-right: 30px;
+            border-right: solid 3px black;
+        }
+        .right{
+            padding-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+	<div>
+		<h1>Dicionário Online</h1>
+	</div>
+    <div id="container">
+        <div class="left">
+            <h2>Termos <br>cadastrados</h2>
+            <ul id="termos"></ul>
+        </div>
+    
+        <div class="right">
+            <h2 id="titulo"></h2>
+            <p id=termo></p>
+            <p id=definicao></p>
+            <p id=autor></p>
+            <p id=dataCriacao></p>
+        </div>
+    
+    </div>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            var glossario = [{"id": 1,"termo": "W3C","definicao": "World Wide Web Consortium – escritório responsável por desenvolver normas técnicas para a Internet","autor": "José Borges", "dataCriacao": "01/04/2015"},{"id": 2,"termo": "HTML","definicao": "HyperText Markup Language – linguagem de marcação utilizada para estruturar páginas web", "autor": "Pedro Silva", "dataCriacao": "12/05/2015"},{"id": 3,"termo": "CSS","definicao": "Cascade Style Sheet – Folhas de estilo utilizadas para configurar a visualização de  páginas web.","autor": "Luciana Mendes", "dataCriacao": "06/11/2017"}];
+
+            $(glossario).each(function (idx, termos) { 
+                let titulo = termos.termo;
+                $("#termos")
+                    .append(
+                        $("<li>")
+                            .text(titulo).attr("value", idx)
+                    )
+                    
+                $("#termos").on("click", "li", function () {
+                    let id = $(this).val();
+                    $("#titulo").text("Definição");
+                    $("#termo").text(glossario[id].termo);
+                    $("#definicao").text(glossario[id].definicao);
+                    $("#autor").text(glossario[id].autor);
+                    $("#dataCriacao").text("Data de criação: "+glossario[id].dataCriacao);
+                })
+            })
+            
+        });
+
+    </script>
+  
+</body>
+
+</html>

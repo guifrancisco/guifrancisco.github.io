@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Lab Jquery - EX5</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+    <div>
+        Digite uma frase:
+        <input type="text" id="frase"><br><br>
+        Procurar a palavra:
+        <input type="text" id="encontrar"> <br><br>
+        Substituir por:
+        <input type="text" id="substituir" ><br><br>
+        <button id="button" class="btn">Enviar</button>
+    </div>
+
+    <div id="resultado"></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            $("#button").click(function(){
+                let frase = $("#frase").val();
+                let encontrar = $("#encontrar").val();
+                let substituir = $("#substituir").val();
+
+                frase = frase.toLocaleLowerCase();
+                encontrar = encontrar.toLocaleLowerCase();
+                substituir = substituir.toLocaleLowerCase();
+                let texto = frase.split(' ');
+                for(i=0;i<texto.length;i++)
+                {
+                    if(texto[i]==encontrar)
+                    {
+                        texto[i] = substituir;
+                    }
+                }
+                let frase_substituida = texto.join(' ');
+                $("#resultado").text(frase_substituida);
+            })
+
+        });
+    </script>
+	
+</body>
+</html>

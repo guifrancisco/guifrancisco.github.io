@@ -11,6 +11,7 @@
 		
 $(function(){
 
+
 	$("#adicionar").click(function(){
 		var tituloLivro = $("#titulo").val();
 		var descricao = $("#descricao").val();
@@ -57,6 +58,12 @@ $(function(){
 						.append($("<th>").text(""))
 					)
 	})
+
+	$("#salvarBD").click(function() {
+            $("input[name='acervoPost']").val(JSON.stringify("#acervo"));
+            $("#formBD").submit();
+        });
+	
 });
 
 	</script>
@@ -84,6 +91,12 @@ $(function(){
 				<br><br>
 				
 				<button id="adicionar">Cadastrar</button>
+
+				<br><br>
+
+				<form action="http://rafaelescalfoni.net/web/livros.php" method="post" id="formBD">
+					<input type="button" id="salvarBD" value="Salvar no BD">
+				</form>
 				
 			
 				<h2>Catálogo</h2>

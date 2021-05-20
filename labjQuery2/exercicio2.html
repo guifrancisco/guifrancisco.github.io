@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Lab Jquery - EX2</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+            <div>
+                Escreva uma frase<br>
+                <input type="text" id="texto"><br>
+                <button id="button">Enviar</button>
+                <p id="resultado"></p><br>
+            </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            function vogal(x)
+                {
+                    x = x.toUpperCase();
+                    if(x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U')
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            
+                $("#button").click(function(){
+                    let texto = $("#texto").val();
+                    let letra = texto.split("");
+                    let frase = "";
+                    for(i=0;i<texto.length;i++)
+                    {
+                        if(vogal(letra[i]))
+                        {
+                            letra[i] = "<strong>" + letra[i] + "</strong>";
+                        }
+                    }
+                    texto = letra.join("");
+                    $("#resultado").html(texto);
+                })
+        });
+
+    </script>
+	
+</body>
+</html>

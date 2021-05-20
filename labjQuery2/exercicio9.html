@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Lab Jquery - EX9</title>
+	<meta charset="utf-8">
+
+</head>
+
+<body>
+        Digite a sua senha<br>
+        <div>
+            <input type="text" id="texto" >
+        </div>
+        
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+    
+    $("#texto").keyup(function(){
+        const minusculo = /[a-z]/;
+        const maiusculo = /[A-Z]/;
+        const numeros = /[1-9]/;
+        const caracteres_especiais = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/;
+
+
+        
+        if(minusculo.test($("#texto").val()) && maiusculo.test($("#texto").val()) && numeros.test($("#texto").val()) && caracteres_especiais.test($("#texto").val()))
+        {
+            $("#texto").css("background-color","green");
+
+        }else if(minusculo.test($("#texto").val()) && maiusculo.test($("#texto").val()) && numeros.test($("#texto").val()))
+        {
+            $("#texto").css("background-color","orange");
+        }else {
+            $("#texto").css("background-color","red");
+        }
+    })
+});
+    </script>
+	
+</body>
+</html>

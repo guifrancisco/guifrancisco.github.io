@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Lab Jquery - EX4</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+        <div>
+            Escreva uma frase<br>
+            <input type="text" id="texto"><br>
+            <button id="button">Enviar</button>
+            <p id="resultado"></p><br>
+                
+        </div>
+        <div id="resultado"></div>
+        <div id="resultado2"></div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function conta(y, palavra)
+        {
+            return y.filter((v) => (v === palavra)).length; 
+        }
+
+        $(function(){
+        
+            $("#button").click(function(){
+        
+                let frase = $("#texto").val();
+
+                let array_frase = frase.split(/\s+/).map(function(palavra)
+                { 
+                    return palavra.toLocaleLowerCase().replace(/[.,]/g, '');
+                });
+                var objContagem = {};
+                var palavra_maior_ocorrencia;
+                var quantidade_maior_ocorrencia = 0;
+                var aux1;
+
+                jQuery.each(array_frase, function(key,value) {
+                    if (!objContagem.hasOwnProperty(value)) {
+                        objContagem[value] = 1;
+                    } else {
+                        objContagem[value]++;
+                    }
+                });
+
+                var array_frase_sem_repeticao = array_frase.filter(function(element, i){
+                        return array_frase.indexOf(element)===i;
+                });
+
+
+                $.each( array_frase_sem_repeticao, function( key, value ) {
+                    aux1 = objContagem[value] ;
+
+                    
+                    if(aux1 > quantidade_maior_ocorrencia){
+                        quantidade_maior_ocorrencia = aux1;
+                        palavra_maior_ocorrencia = array_frase_sem_repeticao[key];
+                    }
+                });
+
+
+                $("#resultado").text("Palavra de maior ocorrência: " + palavra_maior_ocorrencia );
+                $("#resultado2").text(" Quantidade de ocorrências: " + quantidade_maior_ocorrencia + " vez(es)");
+                
+            })
+        });
+    </script>
+	
+</body>
+</html>
